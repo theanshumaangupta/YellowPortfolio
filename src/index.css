@@ -18,3 +18,15 @@ body{
 .nav-cursor{
     border-radius: 0 0 25% 25%;
 }
+
+/* Add this globally or in your CSS */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.custom-scrollbar-thumb {
+  transition: left 0.2s ease;
+}
