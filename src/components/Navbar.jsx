@@ -17,7 +17,7 @@ export default function Navbar() {
     }, [NavCursor])
 
     return (
-        <nav className=' font-semibold bg-black  w-full p-5 flex justify-between items-center' >
+        <nav className=' font-semibold bg-primary  w-full p-5 flex justify-between items-center' >
             {/* Nav Cursor */}
             <div className={`h-3 w-15 nav-cursor bg-yellow  absolute top-0 duration-500 ease-in-out`}
                 style={{ left: `${CursorStyle.left}`, width: `${CursorStyle.width}` }}

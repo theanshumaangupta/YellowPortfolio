@@ -1,6 +1,6 @@
 export default function Resume() {
     return (
-        <div className=" flex-shrink-0 h-screen flex items-center">
+        <div className=" flex-shrink-0 h-screen flex items-center p-r-10">
             <div className="relative flex items-center">
                 <h1 className="text-6xl font-bold -rotate-90">My Resume</h1>
                 <div className=" flex flex-col gap-10 justify-center items-center">

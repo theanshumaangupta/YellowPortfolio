@@ -10,7 +10,7 @@ function App() {
 
   const scrollRef = useRef(null)
   return (
-    <div className="h-screen flex flex-col font-livic bg-black relative">
+    <div className="h-screen flex flex-col font-livic bg-primary relative">
       <Navbar />
       <div
         ref={scrollRef}
