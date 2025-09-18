@@ -1,6 +1,6 @@
 export default function Resume() {
     return (
-        <div className="border-4 flex-shrink-0 h-screen flex items-center">
+        <div className=" flex-shrink-0 h-screen flex items-center">
             <div className="relative flex items-center">
                 <h1 className="text-6xl font-bold -rotate-90">My Resume</h1>
                 <div className=" flex flex-col gap-10 justify-center items-center">
@@ -46,7 +46,7 @@ export default function Resume() {
                         </div>
                     </div>
                 </div>
-                <img src="images/right-cut.png" className="absolute right-0 rotate-90 border-2 w-[100vh]" alt="" />
+                <img src="images/right-cut.png" className="absolute right-0 translate-x-[52%] rotate-90  w-[100vh]" alt="" />
 
             </div>
             <div style={{ backgroundImage: "url('assets/backgrounds/facts.jpg')" }}
