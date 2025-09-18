@@ -16,7 +16,7 @@ function App() {
         ref={scrollRef}
         className="flex-1 flex relative overflow-x-scroll scrollbar-hide snap-x snap-mandatory"
       >
-        <div className="z-[4] absolute w-[500vw] h-[500vw] rounded-full bg-black top-1/2 left-[95%] -translate-x-1/2 -translate-y-1/2"></div>
+        {/* <div className="z-[4] absolute w-[500vw] h-[500vw] rounded-full bg-black top-1/2 left-[95%] -translate-x-1/2 -translate-y-1/2"></div> */}
 
         <Home />
         <About />

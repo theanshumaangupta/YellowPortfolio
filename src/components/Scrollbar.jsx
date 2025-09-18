@@ -63,7 +63,7 @@ export default function Scrollbar({ scrollRef }) {
         window.addEventListener('mouseup', onMouseUp);
     }
     return (
-        <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 w-3/4 h-2 bg-gray-700 rounded custom-scrollbar-track">
+        <div className=" absolute bottom-5 left-1/2 transform -translate-x-1/2 w-3/4 h-2 bg-gray-700 rounded custom-scrollbar-track">
             <div
                 className="h-2 bg-yellow-500 rounded cursor-pointer"
                 style={{

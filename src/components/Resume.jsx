@@ -1,8 +1,8 @@
 export default function Resume() {
     return (
-        <div className=" flex-shrink-0 h-full gap-10 px-20 flex items-center">
-            <h1 className="z-10 text-6xl font-bold -rotate-90">My Resume</h1>
-            <div className="z-10 flex flex-col gap-10 justify-center items-center">
+        <div className="border-4 flex-shrink-0 h-screen flex items-center">
+            <h1 className=" text-6xl font-bold -rotate-90">My Resume</h1>
+            <div className=" flex flex-col gap-10 justify-center items-center">
                 <div className="flex gap-10">
                     <div className="rounded-2xl p-8  w-75  h-45 bg-[#0B0B0B]">
                         <h1 className="text-yellow text-2xl font-semibold mb-4">Project Manager</h1>
@@ -45,8 +45,11 @@ export default function Resume() {
                     </div>
                 </div>
             </div>
-            <div style={{backgroundImage: "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNIJ0KjnGeKn21NrcDbfhSBlIUpI0kr-R9Pw&s')"}} 
-            className="w-[100vw] h-full z-[2] bg-center bg-cover bg-fixed bg-no-repeat" >
+            <img src="images/right-cut.png" className="rotate-90 border-2 w-[100vh]" alt="" />
+            <div style={{ backgroundImage: "url('assets/backgrounds/facts.jpg')" }}
+                className="w-[100vw] h-full bg-center bg-cover bg-fixed bg-no-repeat" >
+            </div>
+            <div className="w-[100vw] h-full bg-black">
 
             </div>
         </div>
