@@ -1,13 +1,13 @@
 export default function ABout() {
     return (
-        <div className='z-10 flex-shrink-0 flex gap-20 justify-center h-full w-[80vw] items-center'>
-            <img src="images/men.jpg" className='' alt="" />
+        <div id="About" className=' z-10 flex-shrink-0 flex gap-20 justify-center h-full w-[80vw] items-center'>
+            <img src="images/pfp.jpg" className='h-[25rem]' alt="" />
             <div >
-                <h1 className='text-7xl font-bold'>Stevan <br /> <span className='text-yellow'>Walker</span></h1>
+                <h1 className='text-7xl font-bold'>Anshumaan <br /> <span className='text-yellow'>Gupta</span></h1>
                 <div className='flex ml-14 mt-15 text-xl font-semibold gap-10'>
                     <ul className='flex flex-col gap-4 list-disc text-yellow'>
                         <li>
-                            <span className='text-[#888888]'>Age:  <span className='text-white'> 27 years</span></span>
+                            <span className='text-[#888888]'>Age:  <span className='text-white'> 19 years</span></span>
 
                         </li>
                         <li>
@@ -19,7 +19,7 @@ export default function ABout() {
 
                         </li>
                         <li>
-                            <span className='text-[#888888]'>Languages:  <span className='text-white'> Hindi</span></span>
+                            <span className='text-[#888888]'>Languages:  <span className='text-white'> Hindi, Eng</span></span>
 
                         </li>
                     </ul>
@@ -29,11 +29,11 @@ export default function ABout() {
 
                         </li>
                         <li>
-                            <span className='text-[#888888]'>Phone:  <span className='text-white'> 885 8684 812</span></span>
+                            <span className='text-[#888888]'>Phone:  <span className='text-white'> +91 8858684812</span></span>
 
                         </li>
                         <li>
-                            <span className='text-[#888888]'>Email:  <span className='text-white'> find.anshumaan</span></span>
+                            <span className='text-[#888888]'>Github:  <span className='text-white'> theanshumaangupta</span></span>
 
                         </li>
                         <li>

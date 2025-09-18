@@ -17,7 +17,7 @@ export default function Navbar() {
     }, [NavCursor])
 
     return (
-        <nav className=' font-semibold bg-primary  w-full p-5 flex justify-between items-center' >
+        <nav className='z-[99] font-semibold fixed top-0 w-full p-5 flex justify-between items-center' >
             {/* Nav Cursor */}
             <div className={`h-3 w-15 nav-cursor bg-yellow  absolute top-0 duration-500 ease-in-out`}
                 style={{ left: `${CursorStyle.left}`, width: `${CursorStyle.width}` }}
@@ -26,8 +26,10 @@ export default function Navbar() {
                 {
                     navItems.map((heading, index) => {
                         return (
-                            <li
-                                ref={el => (navRef.current[index] = el)} key={index} className={`duration-200 cursor-pointer ${index == NavCursor ? 'text-yellow' : ''}`} onClick={() => focusNav(index)} >{heading}</li>
+                        <a href={`#${heading}`}>
+
+                            <li ref={el => (navRef.current[index] = el)} key={index} className={`duration-200 cursor-pointer ${index == NavCursor ? 'text-yellow' : ''}`} onClick={() => focusNav(index)} >{heading}</li>
+                        </a>
                         )
                     })
                 }

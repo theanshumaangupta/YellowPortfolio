@@ -5,13 +5,15 @@ import About from './components/About'
 import Home from './components/Home'
 import Scrollbar from './components/Scrollbar'
 import Resume from './components/Resume'
+import Portfolio from './components/Portfolio'
 
 function App() {
 
   const scrollRef = useRef(null)
   return (
+  <>
+    <Navbar />
     <div className="h-screen flex flex-col font-livic bg-primary relative">
-      <Navbar />
       <div
         ref={scrollRef}
         className="flex-1 flex relative overflow-x-scroll scrollbar-hide snap-x snap-mandatory"
@@ -22,11 +24,14 @@ function App() {
         <About />
         <Skills />
         <Resume/>
+        <Portfolio/>
       </div>
 
       {/* Custom Scrollbar */}
       <Scrollbar scrollRef={scrollRef} />
     </div>
+
+  </>
   )
 }
 
