@@ -6,12 +6,16 @@ export default function Portfolio() {
     const currentIndex = useRef(0)
     const noOfProject = 3
     let interval = 0
-    let givengap = 12
+
     useEffect(() => {
-        if (mainref.current) {
-            interval = (main.scrollHeight * (1 / noOfProject)) + givengap
-        }
-    }, [])
+    if (mainref.current) {
+        const firstSlide = mainref.current.firstElementChild;
+        const style = window.getComputedStyle(mainref.current);
+        const gap = parseInt(style.rowGap || style.gap || 0, 10); // Tailwind gap-15 = 3.75rem
+        interval = firstSlide.clientHeight + gap;
+    }
+    }, []);
+
     function scrollUp() {
         currentIndex.current -= 1
         if (currentIndex.current < 0) currentIndex.current = noOfProject - 1
