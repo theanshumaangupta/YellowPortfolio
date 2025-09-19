@@ -26,9 +26,9 @@ export default function Navbar() {
                 {
                     navItems.map((heading, index) => {
                         return (
-                        <a href={`#${heading}`}>
+                        <a href={`#${heading}`} key={index}>
 
-                            <li ref={el => (navRef.current[index] = el)} key={index} className={`duration-200 cursor-pointer ${index == NavCursor ? 'text-yellow' : ''}`} onClick={() => focusNav(index)} >{heading}</li>
+                            <p ref={el => (navRef.current[index] = el)}  className={`duration-200 cursor-pointer ${index == NavCursor ? 'text-yellow' : ''}`} onClick={() => focusNav(index)} >{heading}</p>
                         </a>
                         )
                     })
