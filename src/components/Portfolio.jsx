@@ -11,7 +11,7 @@ export default function Portfolio() {
     if (mainref.current) {
         const firstSlide = mainref.current.firstElementChild;
         const style = window.getComputedStyle(mainref.current);
-        const gap = parseInt(style.rowGap || style.gap || 0, 10); // Tailwind gap-15 = 3.75rem
+        const gap = parseInt(style.rowGap || style.gap || 0, 10);
         interval = firstSlide.clientHeight + gap;
     }
     }, []);
@@ -42,9 +42,9 @@ export default function Portfolio() {
         <div id="Portfolio" className=" flex-shrink-0 h-screen flex items-center p-r-10">
             <div className="w-[100vw]  items-center flex h-full relative bg-primary">
                 <img src="images/right-cut.png" className="absolute z-1 left-0 translate-x-[-52%] -rotate-90  w-[100vh] " alt="" />
-                <h1 className="text-6xl font-bold -rotate-90">My Portfolio</h1>
+                <h1 className="box right-box text-6xl font-bold -rotate-90">My Portfolio</h1>
                 {/* Slider Section */}
-                <div id="main" ref={mainref} className="overflow-hidden transform w-auto flex gap-5 flex-col h-[60vh] " >
+                <div id="main" ref={mainref} className="left-[100px] box right-box  overflow-hidden transform w-auto flex gap-5 flex-col h-[60vh] " >
                     {/* Slider 1 */}
                     <div className="flex h-full items-center flex-shrink-0 gap-10" >
                         <div className="w-[40vw] h-[60vh] bg-gray rounded-4xl overflow-hidden ">
@@ -107,14 +107,14 @@ export default function Portfolio() {
             >
                 <div className="absolute inset-0 bg-black/50"></div>
                 <div className="flex gap-40 mt-10">
-                    <div className="max-w-[25rem] p-10 rounded-2xl bg-gray relative ">
+                    <div className="box right-box  max-w-[25rem] p-10 rounded-2xl bg-gray relative ">
                         <p className="text-[18px] livic mb-10 italic leading-10">" I worked with Steven, he was very helpful and fast to respond to my inquiry to help with Wordpress website issues and all technical problems. "</p>
                         <p className="text-[18px] livic text-yellow">Jasmin Aniston</p>
                         <p className="text-[18px] livic">Director - Adobe</p>
                         <img src="assets/testimonials/testimonial-1.jpg" className="h-25 w-25 absolute rounded-full -right-[33px]" alt="" />
                     </div>
 
-                    <div className="max-w-[25rem] p-10 rounded-2xl relative bg-gray">
+                    <div className="box right-box  max-w-[25rem] p-10 rounded-2xl relative bg-gray">
                         <p className="text-[18px] livic mb-10 italic leading-10">" I worked with Steven, he was very helpful and fast to respond to my inquiry to help with Wordpress website issues and all technical problems. "</p>
                         <p className="text-[18px] livic text-yellow">Jasmin Aniston</p>
                         <p className="text-[18px] livic">Director - Adobe</p>
@@ -130,7 +130,7 @@ export default function Portfolio() {
                 <h1 className="text-6xl font-bold -rotate-90">Get In Touch</h1>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-15 w-[40rem] max-w-4xl  py-10">
                     {/* Phone */}
-                    <div className="py-10 justify-center relative bg-neutral-900 rounded-2xl p-6 text-center flex flex-col items-center">
+                    <div className="box top-box py-10 justify-center relative bg-neutral-900 rounded-2xl p-6 text-center flex flex-col items-center">
                         <div className="absolute -top-8 w-16 h-16 rounded-full bg-black border border-gray-700 flex items-center justify-center">
                             <span className="text-yellow-500 text-2xl">📞</span>
                         </div>
@@ -139,7 +139,7 @@ export default function Portfolio() {
                     </div>
 
                     {/* Email */}
-                    <div className="py-10 justify-center relative bg-neutral-900 rounded-2xl p-6 text-center flex flex-col items-center">
+                    <div className="box top-box py-10 justify-center relative bg-neutral-900 rounded-2xl p-6 text-center flex flex-col items-center">
                         <div className="absolute -top-8 w-16 h-16 rounded-full bg-black border border-gray-700 flex items-center justify-center">
                             <span className="text-yellow-500 text-2xl">✉️</span>
                         </div>
@@ -148,7 +148,7 @@ export default function Portfolio() {
                     </div>
 
                     {/* Address */}
-                    <div className="py-10 justify-center relative bg-neutral-900 rounded-2xl p-6 text-center flex flex-col items-center">
+                    <div className="box bottom-box py-10 justify-center relative bg-neutral-900 rounded-2xl p-6 text-center flex flex-col items-center">
                         <div className="absolute -top-8 w-16 h-16 rounded-full bg-black border border-gray-700 flex items-center justify-center">
                             <span className="text-yellow-500 text-2xl">📍</span>
                         </div>
@@ -157,7 +157,7 @@ export default function Portfolio() {
                     </div>
 
                     {/* Follow Me */}
-                    <div className="py-10 justify-center relative bg-neutral-900 rounded-2xl p-6 text-center flex flex-col items-center">
+                    <div className="box bottom-box py-10 justify-center relative bg-neutral-900 rounded-2xl p-6 text-center flex flex-col items-center">
                         <div className="absolute -top-8 w-16 h-16 rounded-full bg-black border border-gray-700 flex items-center justify-center">
                             <span className="text-yellow-500 text-2xl">🔗</span>
                         </div>
@@ -179,7 +179,7 @@ export default function Portfolio() {
                 <div className="absolute inset-0 bg-black/50"></div>
 
                 {/* Content */}
-                <div className="relative z-10 flex flex-col items-center">
+                <div className="box right-box relative z-10 flex flex-col items-center">
                     <h1 className="text-6xl font-bold mb-10 text-white">My Clients</h1>
 
                     <div className="flex gap-10">

@@ -48,3 +48,25 @@ body{
 html {
   scroll-behavior: smooth;
 }
+.bottom-box{
+  opacity: 0.1;
+  transform: translateY(+150px) scale(0.9);
+}
+.top-box{
+  opacity: 0.1;
+  transform: translateY(-150px) scale(0.9);
+}
+.right-box{
+  opacity: 0.1;
+  position: relative;
+  left: 200px;
+  /* transform: translateX(100px) scale(0.9); */
+}
+.in-view{
+  opacity: 1;
+  transform: translateX(0px) scale(1);
+  transition-duration:500ms;
+  left: 0;
+  /* transition-property: transform, opacity; */
+  transition-timing-function: linear;
+}

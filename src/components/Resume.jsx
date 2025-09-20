@@ -5,17 +5,17 @@ export default function Resume() {
                 <h1 className="text-6xl font-bold -rotate-90">My Resume</h1>
                 <div className=" flex flex-col justify-center items-center">
                     <div className="flex gap-10">
-                        <div className="rounded-2xl p-8  w-75  h-45 bg-gray">
+                        <div className="box top-box rounded-2xl p-8  w-75  h-45 bg-gray">
                             <h1 className="text-yellow text-2xl font-semibold mb-4">Project Manager</h1>
                             <h2 className="text-[20px]   ">2019 - Now</h2>
                             <h2 className="text-[20px]">Adobe Company</h2>
                         </div>
-                        <div className="rounded-2xl p-8  w-75  h-45 bg-gray">
+                        <div className="box top-box rounded-2xl p-8  w-75  h-45 bg-gray">
                             <h1 className="text-yellow text-2xl font-semibold mb-4">Project Manager</h1>
                             <h2 className="text-[20px]   ">2019 - Now</h2>
                             <h2 className="text-[20px]">Adobe Company</h2>
                         </div>
-                        <div className="rounded-2xl p-8  w-75  h-45 bg-gray">
+                        <div className="box top-box rounded-2xl p-8  w-75  h-45 bg-gray">
                             <h1 className="text-yellow text-2xl font-semibold mb-4">Project Manager</h1>
                             <h2 className="text-[20px]   ">2019 - Now</h2>
                             <h2 className="text-[20px]">Adobe Company</h2>
@@ -34,12 +34,12 @@ export default function Resume() {
 
                     </div>
                     <div className="flex gap-10">
-                        <div className="rounded-2xl p-8  w-75  h-45 bg-gray">
+                        <div className="box bottom-box rounded-2xl p-8  w-75  h-45 bg-gray">
                             <h1 className="text-yellow text-2xl font-semibold mb-4">Project Manager</h1>
                             <h2 className="text-[20px]   ">2019 - Now</h2>
                             <h2 className="text-[20px]">Adobe Company</h2>
                         </div>
-                        <div className="rounded-2xl p-8  w-75  h-45 bg-gray">
+                        <div className="box bottom-box rounded-2xl p-8  w-75  h-45 bg-gray">
                             <h1 className="text-yellow text-2xl font-semibold mb-4">Project Manager</h1>
                             <h2 className="text-[20px]   ">2019 - Now</h2>
                             <h2 className="text-[20px]">Adobe Company</h2>
@@ -55,7 +55,7 @@ export default function Resume() {
             >
                 <div className="absolute inset-0 bg-black/50"></div>
                 <div className="flex gap-40">
-                    <div className="w-40 h-40 rotate-45 rounded-2xl bg-gray flex items-center justify-center">
+                    <div className="box right-box w-40 h-40 rotate-45 rounded-2xl bg-gray flex items-center justify-center">
                         <div className="-rotate-45 text-center">
                             <h1 className="text-yellow text-2xl font-bold">13</h1>
                             <p className="text-white text-xl">Years Of</p>
@@ -63,7 +63,7 @@ export default function Resume() {
                         </div>
                     </div>
 
-                    <div className="w-40 h-40 rotate-45 rounded-2xl bg-gray flex items-center justify-center">
+                    <div className="box right-box w-40 h-40 rotate-45 rounded-2xl bg-gray flex items-center justify-center">
                         <div className="-rotate-45 text-center">
                             <h1 className="text-yellow text-2xl font-bold">20</h1>
                             <p className="text-white text-xl">Completed</p>
@@ -71,7 +71,7 @@ export default function Resume() {
                         </div>
                     </div>
 
-                    <div className="w-40 h-40 rotate-45 rounded-2xl bg-gray flex items-center justify-center">
+                    <div className="box right-box w-40 h-40 rotate-45 rounded-2xl bg-gray flex items-center justify-center">
                         <div className="-rotate-45 text-center">
                             <h1 className="text-yellow text-2xl font-bold">50+</h1>
                             <p className="text-white text-xl">Happy</p>
@@ -81,7 +81,7 @@ export default function Resume() {
                 </div>
 
                 <div className="flex gap-40 mt-10">
-                    <div className="w-40 h-40 rotate-45 rounded-2xl bg-gray flex items-center justify-center">
+                    <div className="box right-box w-40 h-40 rotate-45 rounded-2xl bg-gray flex items-center justify-center">
                         <div className="-rotate-45 text-center">
                             <h1 className="text-yellow text-2xl font-bold">10</h1>
                             <p className="text-white text-xl">Awards</p>
@@ -89,7 +89,7 @@ export default function Resume() {
                         </div>
                     </div>
 
-                    <div className="w-40 h-40 rotate-45 rounded-2xl bg-gray flex items-center justify-center">
+                    <div className="box right-box w-40 h-40 rotate-45 rounded-2xl bg-gray flex items-center justify-center">
                         <div className="-rotate-45 text-center">
                             <h1 className="text-yellow text-2xl font-bold">24/7</h1>
                             <p className="text-white text-xl">Customer</p>
