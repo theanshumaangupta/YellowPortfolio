@@ -45,8 +45,8 @@ body{
 .custom-scrollbar-thumb {
   transition: left 0.2s ease;
 }
-html {
-  scroll-behavior: smooth;
+* {
+  scroll-behavior: smooth !important;
 }
 .bottom-box{
   opacity: 0.1;

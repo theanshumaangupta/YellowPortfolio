@@ -9,8 +9,18 @@ export default function Portfolio() {
     const currentIndex = useRef(0)
     const noOfProject = 3
     let interval = 0
+    function SliderDot(index) {
+        const el = document.querySelector(".project-1-parent");
+        if (!el) return;
 
+        const slides = document.querySelectorAll(".sub-p-1").length; // number of images inside
+        el.scrollTo({
+            left: (el.scrollWidth / slides) * index, // scroll to that slide
+            behavior: "smooth",
+        });
+    }
     useEffect(() => {
+
         if (mainref.current) {
             const firstSlide = mainref.current.firstElementChild;
             const style = window.getComputedStyle(mainref.current);
@@ -47,11 +57,31 @@ export default function Portfolio() {
                 <img src="images/right-cut.png" className="absolute z-1 left-0 translate-x-[-52%] -rotate-90  w-[100vh] " alt="" />
                 <h1 className="box right-box text-6xl font-bold -rotate-90">My Portfolio</h1>
                 {/* Slider Section */}
-                <div id="main" ref={mainref} className="left-[100px] box right-box  overflow-hidden h-[25rem] transform flex gap-5 flex-col " >
+                <div id="main" ref={mainref} className="left-[100px] box right-box  overflow-hidden h-[25rem] transform flex gap-15 flex-col " >
+
+
                     {/* Slider 1 */}
                     <div className="flex h-full items-center flex-shrink-0 gap-10" >
-                        <div className="w-[35rem] h-[25rem] bg-gray rounded-4xl overflow-hidden ">
-                            <img src="assets/portfolio/project-1.jpg" className="object-cover h-full w-full" alt="" />
+                        <div className="project-1-parent w-[35rem] h-full bg-gray rounded-4xl overflow-hidden flex">
+
+                            {/* For Sub Slider Images */}
+                            <img src="assets/portfolio/project-1.jpg" className="sub-p-1 object-cover h-full w-full" alt="" />
+                            <img src="assets/portfolio/project-2.jpg" className="sub-p-1 object-cover h-full w-full" alt="" />
+                            <img src="assets/portfolio/project-3.jpg" className="sub-p-1 object-cover h-full w-full" alt="" />
+                            {/* For Dots Of Slider */}
+                            <div className="slider-dots-parent cursor-pointer flex gap-2 absolute bottom-5 left-[16rem]">
+                                {Array.from({ length:document.querySelectorAll(".sub-p-1")?.length || 3}).map(
+                                    (_, i) => (
+                                        <div
+                                            key={i}
+                                            onClick={() => SliderDot(i)}
+                                            className="slider-dot h-2 w-2 rounded-full bg-yellow"
+                                        ></div>
+                                    )
+                                )}
+                            </div>
+
+
                         </div>
                         <div className="flex flex-col gap-5 ">
                             <h1 className="text-4xl font-bold">Slider Project</h1>
@@ -62,9 +92,13 @@ export default function Portfolio() {
                             <button className="outline-none border-none rounded-4xl bg-yellow p-3 bg-gray w-[80%] ">Preview</button>
                         </div>
                     </div>
+
+
+
+
                     {/* Slider 2 */}
                     <div className="flex h-full items-center flex-shrink-0 gap-10" >
-                        <div className="w-[40vw] h-[60vh] bg-gray rounded-4xl overflow-hidden ">
+                        <div className="w-[35rem] h-full bg-gray rounded-4xl overflow-hidden ">
                             <img src="assets/portfolio/project-2.jpg" className="object-cover h-full w-full" alt="" />
                         </div>
                         <div className="flex flex-col gap-5 ">
@@ -78,7 +112,7 @@ export default function Portfolio() {
                     </div>
                     {/* Slider 3 */}
                     <div className="flex h-full items-center flex-shrink-0 gap-10" >
-                        <div className="w-[40vw] h-[60vh] bg-gray rounded-4xl overflow-hidden ">
+                        <div className="w-[35rem] h-full bg-gray rounded-4xl overflow-hidden ">
                             <img src="assets/portfolio/project-3.jpg" className="object-cover h-full w-full" alt="" />
                         </div>
                         <div className="flex flex-col gap-5 ">
