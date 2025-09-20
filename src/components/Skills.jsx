@@ -4,26 +4,36 @@ import { useEffect } from "react";
 export default function Skills() {
     useEffect(() => {
         const boxes = document.querySelectorAll('.box');
+        const observers = [];
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        entry.target.classList.add('in-view');
-                    },(index)* 200);
+        boxes.forEach((box) => {
+            const delay = parseInt(box.dataset.delay || 0, 10);
+            const margin = box.dataset.margin || "0px 0px -100px -0px"; // default
 
-                }
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('in-view');
+                        }, delay);
+                    }
+                });
+            }, {
+                root: null,
+                threshold: 0.1,
+                rootMargin: margin,
             });
-        }, {
-            root: null,          // viewport
-            threshold: 1,      // 20% visible hone par trigger
+
+            observer.observe(box);
+            observers.push(observer);
         });
 
-        boxes.forEach(box => observer.observe(box));
+        // cleanup: disconnect all observers
         return () => {
-            boxes.forEach(box => observer.unobserve(box));
+            observers.forEach((observer) => observer.disconnect());
         };
-    })
+    }, []);
+
 
 
     return (

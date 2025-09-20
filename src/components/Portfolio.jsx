@@ -88,7 +88,7 @@ export default function Portfolio() {
                         </div>
                     </div>
                 </div>
-                {/* Up DOwn Butons */}
+                {/* Up Down Butons */}
                 <div className=" relative left-[40px] flex flex-col gap-5 ">
                     <div onClick={() => scrollUp()} className='-rotate-90 z-10 rounded-[25px]   p-4 bg-yellow flex justify-center items-center '>
                         <img src="images/right.svg" className='w-10' alt="" />
