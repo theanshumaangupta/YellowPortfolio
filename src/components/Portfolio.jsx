@@ -3,12 +3,27 @@ import { useEffect, useRef } from "react"
 
 import Employ from "./Employ";
 import GetInTouch from "./GetInTouch";
+import { useState } from "react";
 
 export default function Portfolio() {
+    const [SubSlides, setSubSlides] = useState({ project1: 0, project2: 0, project3: 0 })
     const mainref = useRef(null)
     const currentIndex = useRef(0)
-    const noOfProject = 3
-    let interval = 0
+    // const noOfProject = 3
+    // let interval
+
+    useEffect(() => {
+        setSubSlides(() => ({ project1: document.querySelectorAll(".sub-p-1")?.length, project2: document.querySelectorAll(".sub-p-2")?.length, project3: document.querySelectorAll(".sub-p-1")?.length }))
+
+        if (mainref.current) {
+            const firstSlide = mainref.current.firstElementChild;
+            // const style = window.getComputedStyle(mainref.current);
+            // const gap = parseInt(style.rowGap || style.gap || 0, 10);
+            // interval = firstSlide.clientHeight + gap;
+        }
+    }, []);
+
+    // Slider Dot Controll
     function SliderDot(index) {
         const el = document.querySelector(".project-1-parent");
         if (!el) return;
@@ -19,37 +34,42 @@ export default function Portfolio() {
             behavior: "smooth",
         });
     }
-    useEffect(() => {
-
-        if (mainref.current) {
-            const firstSlide = mainref.current.firstElementChild;
-            const style = window.getComputedStyle(mainref.current);
-            const gap = parseInt(style.rowGap || style.gap || 0, 10);
-            interval = firstSlide.clientHeight + gap;
-        }
-    }, []);
-
+    // Using Scroll Into View
     function scrollUp() {
-        currentIndex.current -= 1
-        if (currentIndex.current < 0) currentIndex.current = noOfProject - 1
-        main.scrollTo({
-            top: currentIndex.current * interval,
-            behavior: "smooth"
-        });
+        const slides = mainref.current.children;
+        currentIndex.current -= 1;
+        if (currentIndex.current < 0) currentIndex.current = slides.length - 1;
 
-
+        slides[currentIndex.current].scrollIntoView({ behavior: "smooth" });
     }
     function scrollDown() {
+        const slides = mainref.current.children;
+        currentIndex.current += 1;
+        if (currentIndex.current >= slides.length) currentIndex.current = 0;
 
-        currentIndex.current += 1
-        if (currentIndex.current >= noOfProject) currentIndex.current = 0
-        main.scrollTo({
-            top: currentIndex.current * interval,
-            behavior: "smooth"
-        });
-
-
+        slides[currentIndex.current].scrollIntoView({ behavior: "smooth" });
     }
+
+    // Arrow Functions For Vertical Sliders
+
+    // function scrollUp() {
+    //     currentIndex.current -= 1
+    //     if (currentIndex.current < 0) currentIndex.current = noOfProject - 1
+    //     mainref.current.scrollTo({
+    //         top: currentIndex.current * interval,
+    //         behavior: "smooth"
+    //     });
+    // }
+    // function scrollDown() {
+
+    //     currentIndex.current += 1
+    //     if (currentIndex.current >= noOfProject) currentIndex.current = 0
+    //     mainref.current.scrollTo({
+    //         top: currentIndex.current * interval,
+    //         behavior: "smooth"
+    //     });
+    // }
+
 
     return (
         <div id="Portfolio" className=" flex-shrink-0 h-screen  flex items-center p-r-10">
@@ -58,19 +78,17 @@ export default function Portfolio() {
                 <h1 className="box right-box text-6xl font-bold -rotate-90">My Portfolio</h1>
                 {/* Slider Section */}
                 <div id="main" ref={mainref} className="left-[100px] box right-box  overflow-hidden h-[25rem] transform flex gap-15 flex-col " >
-
-
                     {/* Slider 1 */}
                     <div className="flex h-full items-center flex-shrink-0 gap-10" >
                         <div className="project-1-parent w-[35rem] h-full bg-gray rounded-4xl overflow-hidden flex">
-
                             {/* For Sub Slider Images */}
                             <img src="assets/portfolio/project-1.jpg" className="sub-p-1 object-cover h-full w-full" alt="" />
                             <img src="assets/portfolio/project-2.jpg" className="sub-p-1 object-cover h-full w-full" alt="" />
                             <img src="assets/portfolio/project-3.jpg" className="sub-p-1 object-cover h-full w-full" alt="" />
+                            <img src="assets/portfolio/project-3.jpg" className="sub-p-1 object-cover h-full w-full" alt="" />
                             {/* For Dots Of Slider */}
                             <div className="slider-dots-parent cursor-pointer flex gap-2 absolute bottom-5 left-[16rem]">
-                                {Array.from({ length:document.querySelectorAll(".sub-p-1")?.length || 3}).map(
+                                {Array.from({ length: SubSlides.project1 }).map(
                                     (_, i) => (
                                         <div
                                             key={i}
@@ -80,8 +98,6 @@ export default function Portfolio() {
                                     )
                                 )}
                             </div>
-
-
                         </div>
                         <div className="flex flex-col gap-5 ">
                             <h1 className="text-4xl font-bold">Slider Project</h1>
@@ -127,10 +143,10 @@ export default function Portfolio() {
                 </div>
                 {/* Up Down Butons */}
                 <div className=" relative left-[40px] flex flex-col gap-5 ">
-                    <div onClick={() => scrollUp()} className='-rotate-90 z-10 rounded-[25px]   p-4 bg-yellow flex justify-center items-center '>
+                    <div onClick={() => scrollUp()} className='-rotate-90 z-10 rounded-[25px] cursor-pointer  p-4 bg-yellow flex justify-center items-center '>
                         <img src="images/right.svg" className='w-10' alt="" />
                     </div>
-                    <div onClick={() => scrollDown()} className='rotate-90 z-10 rounded-[25px]   p-4 bg-yellow flex justify-center items-center '>
+                    <div onClick={() => scrollDown()} className='rotate-90 z-10 rounded-[25px] cursor-pointer  p-4 bg-yellow flex justify-center items-center '>
                         <img src="images/right.svg" className='w-10' alt="" />
                     </div>
                 </div>
