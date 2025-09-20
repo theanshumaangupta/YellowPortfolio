@@ -1,6 +1,9 @@
 'use client'
 import { useEffect, useRef } from "react"
 
+import Employ from "./Employ";
+import GetInTouch from "./GetInTouch";
+
 export default function Portfolio() {
     const mainref = useRef(null)
     const currentIndex = useRef(0)
@@ -8,12 +11,12 @@ export default function Portfolio() {
     let interval = 0
 
     useEffect(() => {
-    if (mainref.current) {
-        const firstSlide = mainref.current.firstElementChild;
-        const style = window.getComputedStyle(mainref.current);
-        const gap = parseInt(style.rowGap || style.gap || 0, 10);
-        interval = firstSlide.clientHeight + gap;
-    }
+        if (mainref.current) {
+            const firstSlide = mainref.current.firstElementChild;
+            const style = window.getComputedStyle(mainref.current);
+            const gap = parseInt(style.rowGap || style.gap || 0, 10);
+            interval = firstSlide.clientHeight + gap;
+        }
     }, []);
 
     function scrollUp() {
@@ -39,15 +42,15 @@ export default function Portfolio() {
     }
 
     return (
-        <div id="Portfolio" className=" flex-shrink-0 h-screen flex items-center p-r-10">
-            <div className="w-[100vw]  items-center flex h-full relative bg-primary">
+        <div id="Portfolio" className=" flex-shrink-0 h-screen  flex items-center p-r-10">
+            <div className="min-w-[90rem] flex-shrink-0 pr-10  items-center flex h-full relative bg-primary">
                 <img src="images/right-cut.png" className="absolute z-1 left-0 translate-x-[-52%] -rotate-90  w-[100vh] " alt="" />
                 <h1 className="box right-box text-6xl font-bold -rotate-90">My Portfolio</h1>
                 {/* Slider Section */}
-                <div id="main" ref={mainref} className="left-[100px] box right-box  overflow-hidden transform w-auto flex gap-5 flex-col h-[60vh] " >
+                <div id="main" ref={mainref} className="left-[100px] box right-box  overflow-hidden h-[25rem] transform flex gap-5 flex-col " >
                     {/* Slider 1 */}
                     <div className="flex h-full items-center flex-shrink-0 gap-10" >
-                        <div className="w-[40vw] h-[60vh] bg-gray rounded-4xl overflow-hidden ">
+                        <div className="w-[35rem] h-[25rem] bg-gray rounded-4xl overflow-hidden ">
                             <img src="assets/portfolio/project-1.jpg" className="object-cover h-full w-full" alt="" />
                         </div>
                         <div className="flex flex-col gap-5 ">
@@ -100,113 +103,9 @@ export default function Portfolio() {
                 <img src="images/right-cut.png" className="z-1 absolute right-0 translate-x-[52%] rotate-90  w-[100vh]" alt="" />
             </div>
 
-            {/*Employee Rating */}
-            <div
-                style={{ backgroundImage: "url('assets/backgrounds/testimonials.jpg')" }}
-                className="w-[90vw] relative h-full flex flex-col justify-center items-center bg-center bg-cover bg-fixed bg-no-repeat"
-            >
-                <div className="absolute inset-0 bg-black/50"></div>
-                <div className="flex gap-40 mt-10">
-                    <div className="box right-box  max-w-[25rem] p-10 rounded-2xl bg-gray relative ">
-                        <p className="text-[18px] livic mb-10 italic leading-10">" I worked with Steven, he was very helpful and fast to respond to my inquiry to help with Wordpress website issues and all technical problems. "</p>
-                        <p className="text-[18px] livic text-yellow">Jasmin Aniston</p>
-                        <p className="text-[18px] livic">Director - Adobe</p>
-                        <img src="assets/testimonials/testimonial-1.jpg" className="h-25 w-25 absolute rounded-full -right-[33px]" alt="" />
-                    </div>
+            <Employ />
+            <GetInTouch />
 
-                    <div className="box right-box  max-w-[25rem] p-10 rounded-2xl relative bg-gray">
-                        <p className="text-[18px] livic mb-10 italic leading-10">" I worked with Steven, he was very helpful and fast to respond to my inquiry to help with Wordpress website issues and all technical problems. "</p>
-                        <p className="text-[18px] livic text-yellow">Jasmin Aniston</p>
-                        <p className="text-[18px] livic">Director - Adobe</p>
-                        <img src="assets/testimonials/testimonial-2.jpg" className="h-25 w-25 absolute rounded-full -right-[33px]" alt="" />
-
-                    </div>
-                </div>
-            </div>
-
-            {/* Get in Touch */}
-            <div id="Contact" className="w-[80vw] items-center flex h-full relative  bg-primary">
-                <img src="images/right-cut.png" className="z-1 absolute left-0 translate-x-[-52%] -rotate-90  w-[100vh] " alt="" />
-                <h1 className="text-6xl font-bold -rotate-90">Get In Touch</h1>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-15 w-[40rem] max-w-4xl  py-10">
-                    {/* Phone */}
-                    <div className="box top-box py-10 justify-center relative bg-neutral-900 rounded-2xl p-6 text-center flex flex-col items-center">
-                        <div className="absolute -top-8 w-16 h-16 rounded-full bg-black border border-gray-700 flex items-center justify-center">
-                            <span className="text-yellow-500 text-2xl">📞</span>
-                        </div>
-                        <p className="mt-8 text-gray-400">Phone</p>
-                        <p className="font-semibold text-lg">+216 21 184 010</p>
-                    </div>
-
-                    {/* Email */}
-                    <div className="box top-box py-10 justify-center relative bg-neutral-900 rounded-2xl p-6 text-center flex flex-col items-center">
-                        <div className="absolute -top-8 w-16 h-16 rounded-full bg-black border border-gray-700 flex items-center justify-center">
-                            <span className="text-yellow-500 text-2xl">✉️</span>
-                        </div>
-                        <p className="mt-8 text-gray-400">Email</p>
-                        <p className="font-semibold text-lg">contact@steven.net</p>
-                    </div>
-
-                    {/* Address */}
-                    <div className="box bottom-box py-10 justify-center relative bg-neutral-900 rounded-2xl p-6 text-center flex flex-col items-center">
-                        <div className="absolute -top-8 w-16 h-16 rounded-full bg-black border border-gray-700 flex items-center justify-center">
-                            <span className="text-yellow-500 text-2xl">📍</span>
-                        </div>
-                        <p className="mt-8 text-gray-400">Address</p>
-                        <p className="font-semibold text-lg">London, England</p>
-                    </div>
-
-                    {/* Follow Me */}
-                    <div className="box bottom-box py-10 justify-center relative bg-neutral-900 rounded-2xl p-6 text-center flex flex-col items-center">
-                        <div className="absolute -top-8 w-16 h-16 rounded-full bg-black border border-gray-700 flex items-center justify-center">
-                            <span className="text-yellow-500 text-2xl">🔗</span>
-                        </div>
-                        <p className="mt-8 text-gray-400">Follow Me</p>
-                        <div className="flex gap-4 mt-2 text-white text-xl">
-                            <span>🐙</span> <span>🐦</span> <span>🏀</span> <span>📘</span>
-                        </div>
-                    </div>
-                </div>
-                <img src="images/right-cut.png" className="z-1 absolute right-0 translate-x-[52%] rotate-90  w-[100vh]" alt="" />
-            </div>
-
-            {/* My clients */}
-            <div
-                style={{ backgroundImage: "url('assets/backgrounds/facts.jpg')" }}
-                className="relative w-[100vw] h-full flex flex-col justify-center items-center bg-center bg-cover bg-fixed bg-no-repeat"
-            >
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-black/50"></div>
-
-                {/* Content */}
-                <div className="box right-box relative z-10 flex flex-col items-center">
-                    <h1 className="text-6xl font-bold mb-10 text-white">My Clients</h1>
-
-                    <div className="flex gap-10">
-                        <div className="w-70 h-30 rounded-2xl bg-gray flex items-center justify-center">
-                            <img src="assets/logos/graphicriver-dark-background.png" className="w-[60%]" alt="" />
-                        </div>
-                        <div className="w-70 h-30 rounded-2xl bg-gray flex items-center justify-center">
-                            <img src="assets/logos/themeforest-dark-background.png" className="w-[60%]" alt="" />
-                        </div>
-                        <div className="w-70 h-30 rounded-2xl bg-gray flex items-center justify-center">
-                            <img src="assets/logos/photodune-dark-background.png" className="w-[60%]" alt="" />
-                        </div>
-                    </div>
-
-                    <div className="flex gap-10 mt-10">
-                        <div className="w-70 h-30 rounded-2xl bg-gray flex items-center justify-center">
-                            <img src="assets/logos/codecanyon-dark-background.png" className="w-[60%]" alt="" />
-                        </div>
-                        <div className="w-70 h-30 rounded-2xl bg-gray flex items-center justify-center">
-                            <img src="assets/logos/audiojungle-dark-background.png" className="w-[60%]" alt="" />
-                        </div>
-                        <div className="w-70 h-30 rounded-2xl bg-gray flex items-center justify-center">
-                            <img src="assets/logos/3docean-dark-background.png" className="w-[60%]" alt="" />
-                        </div>
-                    </div>
-                </div>
-            </div>
 
         </div>
     )

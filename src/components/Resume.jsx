@@ -3,7 +3,7 @@ export default function Resume() {
         <div className=" flex-shrink-0 h-screen flex items-center p-r-10">
             <div className="relative flex items-center pr-30">
                 <h1 className="text-6xl font-bold -rotate-90">My Resume</h1>
-                <div className=" flex flex-col justify-center items-center">
+                <div className=" flex flex-col justify-center gap-5 items-center">
                     <div className="flex gap-10">
                         <div className="box top-box rounded-2xl p-8  w-75  h-45 bg-gray">
                             <h1 className="text-yellow text-2xl font-semibold mb-4">Project Manager</h1>
@@ -48,10 +48,10 @@ export default function Resume() {
                 </div>
                 <img src="images/right-cut.png" className="z-1 absolute right-0 translate-x-[52%] rotate-90  w-[100vh]" alt="" />
             </div>
-
+            {/* My achievements  */}
             <div
                 style={{ backgroundImage: "url('assets/backgrounds/facts.jpg')" }}
-                className="w-[100vw] relative h-full flex flex-col justify-center items-center bg-center bg-cover bg-fixed bg-no-repeat"
+                className="min-w-[80rem] relative h-full flex flex-col justify-center items-center bg-center bg-cover bg-fixed bg-no-repeat"
             >
                 <div className="absolute inset-0 bg-black/50"></div>
                 <div className="flex gap-40">

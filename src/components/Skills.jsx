@@ -1,5 +1,6 @@
 "use client"
 import { useEffect } from "react";
+import { IoLogoJavascript } from "react-icons/io5";
 
 export default function Skills() {
     useEffect(() => {
@@ -44,49 +45,50 @@ export default function Skills() {
             <div className='grid grid-cols-4  gap-20 px-10'>
                 <div className='box top-box flex flex-col items-center gap-10'>
                     <span className='h-25 w-25 rotate-45 rounded-[25px] bg-[#222222] flex justify-center items-center'>
-                        <i className="text-yellow devicon-wordpress-plain -rotate-45 text-4xl text-white"></i>
+                        <i className="text-yellow devicon-javascript-plain -rotate-45 text-4xl text-white"></i>
                     </span>
                     Javascript
                 </div>
                 <div className='box top-box flex flex-col items-center gap-10'>
                     <span className='h-25 w-25 rotate-45 rounded-[25px] bg-[#222222] flex justify-center items-center'>
-                        <i className=" text-yellow devicon-wordpress-plain -rotate-45 text-4xl text-white"></i>
+                        <i className=" text-yellow devicon-nextjs-original-wordmark -rotate-45 text-6xl"></i>
+                    </span>
+                    Next JS
+                </div>
+                <div className='box bottom-box flex flex-col items-center gap-10'>
+                    <span className='h-25 w-25 rotate-45 rounded-[25px] bg-[#222222] flex justify-center items-center'>
+                        <i className="text-yellow devicon-react-original -rotate-45 text-4xl"></i>
+                    </span>
+                    React JS
+                </div>
+                <div className='box top-box flex flex-col items-center gap-10'>
+                    <span className='h-25 w-25 rotate-45 rounded-[25px] bg-[#222222] flex justify-center items-center'>
+                        <i className="text-yellow devicon-mongodb-plain -rotate-45 text-4xl"></i>
                     </span>
                     Javascript
                 </div>
                 <div className='box top-box flex flex-col items-center gap-10'>
                     <span className='h-25 w-25 rotate-45 rounded-[25px] bg-[#222222] flex justify-center items-center'>
-                        <i className="text-yellow devicon-wordpress-plain -rotate-45 text-4xl text-white"></i>
-                    </span>
-                    Javascript
-                </div>
-                <div className='box top-box flex flex-col items-center gap-10'>
-                    <span className='h-25 w-25 rotate-45 rounded-[25px] bg-[#222222] flex justify-center items-center'>
-                        <i className="text-yellow devicon-wordpress-plain -rotate-45 text-4xl text-white"></i>
+                        <i className="text-yellow devicon-postgresql-plain -rotate-45 text-4xl"></i>
                     </span>
                     Javascript
                 </div>
                 <div className='box bottom-box flex flex-col items-center gap-10'>
                     <span className='h-25 w-25 rotate-45 rounded-[25px] bg-[#222222] flex justify-center items-center'>
-                        <i className="text-yellow devicon-wordpress-plain -rotate-45 text-4xl text-white"></i>
+                        <i className="text-yellow devicon-python-plain  -rotate-45 text-4xl"></i>
                     </span>
                     Javascript
                 </div>
                 <div className='box bottom-box flex flex-col items-center gap-10'>
                     <span className='h-25 w-25 rotate-45 rounded-[25px] bg-[#222222] flex justify-center items-center'>
-                        <i className="text-yellow devicon-wordpress-plain -rotate-45 text-4xl text-white"></i>
+                        <i className="text-yellow devicon-django-plain -rotate-45 text-4xl"></i>
                     </span>
                     Javascript
                 </div>
+
                 <div className='box bottom-box flex flex-col items-center gap-10'>
                     <span className='h-25 w-25 rotate-45 rounded-[25px] bg-[#222222] flex justify-center items-center'>
-                        <i className="text-yellow devicon-wordpress-plain -rotate-45 text-4xl text-white"></i>
-                    </span>
-                    Javascript
-                </div>
-                <div className='box bottom-box flex flex-col items-center gap-10'>
-                    <span className='h-25 w-25 rotate-45 rounded-[25px] bg-[#222222] flex justify-center items-center'>
-                        <i className="text-yellow devicon-wordpress-plain -rotate-45 text-4xl text-white"></i>
+                        <i className="text-yellow devicon-wordpress-plain -rotate-45 text-4xl"></i>
                     </span>
                     Javascript
                 </div>

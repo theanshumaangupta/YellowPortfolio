@@ -4,7 +4,7 @@ export default function Navbar() {
     const navRef = useRef([])
     const [NavCursor, setNavCursor] = useState(0)
     const [CursorStyle, setCursorStyle] = useState({ left: '15px', width: '0px' })
-    const navItems = ['Home', 'About', 'Portfolio', 'Contact', 'Blog']
+    const navItems = ['Home', 'About', 'Portfolio', 'Contact', 'Clients']
 
     function focusNav(index) {
         setNavCursor(index)
