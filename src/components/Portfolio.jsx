@@ -9,17 +9,12 @@ export default function Portfolio() {
     const [SubSlides, setSubSlides] = useState({ project1: 0, project2: 0, project3: 0 })
     const mainref = useRef(null)
     const currentIndex = useRef(0)
-    // const noOfProject = 3
-    // let interval
 
     useEffect(() => {
         setSubSlides(() => ({ project1: document.querySelectorAll(".sub-p-1")?.length, project2: document.querySelectorAll(".sub-p-2")?.length, project3: document.querySelectorAll(".sub-p-1")?.length }))
 
         if (mainref.current) {
             const firstSlide = mainref.current.firstElementChild;
-            // const style = window.getComputedStyle(mainref.current);
-            // const gap = parseInt(style.rowGap || style.gap || 0, 10);
-            // interval = firstSlide.clientHeight + gap;
         }
     }, []);
 
@@ -50,25 +45,6 @@ export default function Portfolio() {
         slides[currentIndex.current].scrollIntoView({ behavior: "smooth" });
     }
 
-    // Arrow Functions For Vertical Sliders
-
-    // function scrollUp() {
-    //     currentIndex.current -= 1
-    //     if (currentIndex.current < 0) currentIndex.current = noOfProject - 1
-    //     mainref.current.scrollTo({
-    //         top: currentIndex.current * interval,
-    //         behavior: "smooth"
-    //     });
-    // }
-    // function scrollDown() {
-
-    //     currentIndex.current += 1
-    //     if (currentIndex.current >= noOfProject) currentIndex.current = 0
-    //     mainref.current.scrollTo({
-    //         top: currentIndex.current * interval,
-    //         behavior: "smooth"
-    //     });
-    // }
 
 
     return (
